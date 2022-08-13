@@ -39,18 +39,20 @@ public class RegistrationTests extends BaseUI{
         driver.findElement(registrationEnglishLevel).sendKeys(EnglishLevel);
         //driver.findElements(nextButton).get(1).click();
     }
-    By  Pricing = By.cssSelector("p[style='text-align: center; line-height: 25px;']");
-    By Monthly = By.xpath("//button[@data-hook='plan-cta']");
-    By SignUP = By.xpath("//button[@class='y4ajU8']");
+    By  Pricing = By.xpath("//p[contains(@id, 'comp')]");
+    By Monthly = By.cssSelector("button[data-hook='plan-cta']");
+    By SignUP = By.xpath("//button[contains(@data-hook, 'login-section-sign-up')]");
     By toEmail = By.cssSelector("input[id='input_input_emailInput_SM_ROOT_COMP9']");
     By Password = By.cssSelector("input[class='_1SOvY has-custom-focus']");
     By flex = By.xpath("//button[@class='_1fbEI']");
+    By exit = By.xpath("//button[@aria-label='Close']");
     String ONEEmail = "Vladlen.Safaniyuk@gmail.com";
     String ONEPassword = "123456VL";
 
     @Test
     public void mainPageTests2(){
         driver.findElements(Pricing).get(2).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElements(Monthly).get(2).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(SignUP).click();
@@ -58,6 +60,7 @@ public class RegistrationTests extends BaseUI{
         driver.findElement(toEmail).sendKeys(ONEEmail);
         driver.findElements(Password).get(3).sendKeys(ONEPassword);
         driver.findElements(flex).get(1).click();
+        driver.findElement(exit).click();
 
     }
 }
