@@ -64,16 +64,22 @@ public class RegistrationTests extends BaseUI{
 
     }
     By minichat = By.xpath("//iframe[@title='Wix Chat']");
-    By clickChate = By.cssSelector("div[data-hook='minimized-chat-wrapper']");
+    By clickChate = By.xpath("//button[@id='minimized-chat']");
+    By textChate = By.xpath("//textarea[@data-hook='input']");
+    By exit = By.xpath("//button[@data-hook='close-button']");
 
+    String Mytext = "thank you very much for the lesson";
 
     @Test
     public void testIFrame(){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(minichat));
         WebElement iframe = driver.findElement(minichat);
         driver.switchTo().frame(iframe);
         driver.findElement(clickChate).click();
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.findElement(textChate).sendKeys(Mytext);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(exit).click();
 
     }
 }
