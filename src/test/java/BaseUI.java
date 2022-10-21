@@ -16,7 +16,7 @@ public class BaseUI {
     MainPage mainPage;
     RegistrationForm registrationForm;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -27,7 +27,7 @@ public class BaseUI {
         registrationForm = new RegistrationForm(driver, wait);
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown(){
         // driver.quit();
     }

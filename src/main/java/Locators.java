@@ -16,9 +16,9 @@ public class Locators {
 
     //MAINPageTests2__
 
-    public static final By CLICK_PRICING = By.xpath("//li[contains(@data-state, 'menu false  link')]//p[text()='Pricing']");
-    public static final By MONTHLY = By.xpath("//li[@data-hook='plan']//button[@data-hook='plan-cta']");
-    public static final By SIGN_UP1 = By.xpath("//button[@data-hook='login-section-sign-up'][text()='Sign Up']");
+    public static final By CLICK_PRICING = By.xpath("//a[@href ='https://www.qaturbo.com/plans-pricing']");
+    public static final By MONTHLY = By.cssSelector("button[data-fullwidth='false']");
+    public static final By SIGN_UP1 = By.xpath("//button[@data-hook='login-section-sign-up']");
     public static final By EMAIL = By.xpath("//div[@class='XRJUI']//input[@id='input_input_emailInput_SM_ROOT_COMP9']");
     public static final By PASSWORD = By.xpath("//input[@type='password']");
     //public static final By SIGN_UP = By.xpath("//button[@data-testid='buttonElement']//span[text()='Sign Up']");

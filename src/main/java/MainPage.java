@@ -16,11 +16,12 @@ public class MainPage extends BaseActions {
                 //driver.findElements(Locators.NEXT_Button).get(1).click();
         }
 
-        public void pricing() {
+        public void pricing1() {
                 driver.findElement(Locators.CLICK_PRICING).click();
-                wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.MONTHLY));
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(Locators.MONTHLY)));
+                //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
                 driver.findElements(Locators.MONTHLY).get(2).click();
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
                 driver.findElement(Locators.SIGN_UP1).click();
         }
 
@@ -29,7 +30,7 @@ public class MainPage extends BaseActions {
         }
 
         public void close() {
-                driver.findElement(Locators.EXIT).click();
+                //driver.findElement(Locators.EXIT).click();
         }
 
         public void minichatframe1() {
